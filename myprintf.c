@@ -10,6 +10,7 @@
 int _printf(const char *format, ...)
 {
     int j = 0;
+    int i;
     ntype_t fptr[] = {
         {'c', pc},
         {'s', ps},
@@ -18,6 +19,7 @@ int _printf(const char *format, ...)
     };
     int len;
     va_list list;
+    void (*choose)(va_list);
     
     if (format == NULL)
     {
@@ -38,6 +40,24 @@ int _printf(const char *format, ...)
             {
                 putchar(format[j]);
                 j++;
+            }
+        }
+        else
+        {
+            for (i = 0 ; i < 3 ; i++)
+            {
+                if(format[j + 1] == fptr[i].character)
+                {
+                    choose = fptr[i].f;
+                    choose(list);
+                    j = j + 2;
+                }
+                else
+                {
+                    putchar(format[j]);
+                    putchar(format[j + 1]);
+                    j = j + 2;
+                }
             }
         }
     }
