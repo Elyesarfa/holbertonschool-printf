@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
     int j = 0;
-    type_t fptr[] = {
+    ntype_t fptr[] = {
         {'c', pc}
         {'s', ps}
         {'%', ppercent}
