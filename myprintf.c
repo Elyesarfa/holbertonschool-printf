@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
             if (format[j] == '\\' && format[j + 1] == 'n')
             {
                 putchar('\n');
-                j = j + 2
+                j = j + 2;
             }
             else
             {
