@@ -16,14 +16,14 @@ int _printf(const char *format, ...)
         {'%', ppercent},
         {'\0', NULL}
     };
-    int len = strlen(format);
+    int len;
     va_list list;
     
-    if (!format)
+    if (format == NULL)
     {
-        errormsg();
         return (0);
     }
+    len = strlen(format);
     va_start(list, format);
     while (j < len)
     {
