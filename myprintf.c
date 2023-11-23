@@ -17,13 +17,14 @@ int _printf(const char *format, ...)
         {'%', ppercent},
         {'\0', NULL}
     };
+    int bytecount = 0;
     int len;
     va_list list;
     void (*choose)(va_list);
     
     if (format == NULL)
     {
-        return (0);
+        return (-1);
     }
     len = strlen(format);
     va_start(list, format);
@@ -34,12 +35,14 @@ int _printf(const char *format, ...)
             if (format[j] == '\\' && format[j + 1] == 'n')
             {
                 putchar('\n');
+                bytecount = bytecount + 2;
                 j = j + 2;
             }
             else
             {
                 putchar(format[j]);
                 j++;
+                bytecount++;
             }
         }
         else
@@ -51,17 +54,18 @@ int _printf(const char *format, ...)
                     choose = fptr[i].f;
                     choose(list);
                     j = j + 2;
+                    bytecount = bytecount + 2;
                 }
                 else
                 {
                     putchar(format[j]);
                     putchar(format[j + 1]);
                     j = j + 2;
+                    bytecount = bytecount + 2;
                 }
             }
         }
     }
-    *fptr = *fptr;
     va_end(list);
     return (0);
 }
