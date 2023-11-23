@@ -16,14 +16,15 @@ int _printf(const char *format, ...)
         {'%', ppercent},
         {'\0', NULL}
     };
-    
+    int len = strlen(format);
     va_list list;
     
     va_start(list, format);
     if (!format)
+    {
         errormsg();
         return (0);
-    int len = strlen(format);
+    }
     while (j < len)
     {
         if (format[j] != '%')
@@ -32,6 +33,7 @@ int _printf(const char *format, ...)
             j++;
         }
     }
+    *fptr = *fptr;
     va_end(list);
     return (0);
 }
