@@ -19,12 +19,12 @@ int _printf(const char *format, ...)
     int len = strlen(format);
     va_list list;
     
-    va_start(list, format);
     if (!format)
     {
         errormsg();
         return (0);
     }
+    va_start(list, format);
     while (j < len)
     {
         if (format[j] != '%')
