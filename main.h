@@ -12,6 +12,6 @@ int _printf(const char *format, ...);
 void errormsg();
 void pc(va_list l);
 void ppercent(va_list l);
-void ps(valist l);
+void ps(va_list l);
 
 #endif

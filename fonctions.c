@@ -8,7 +8,7 @@
 
 void pc(va_list l)
 {
-    putchar(va_arg(l, char));
+    putchar(va_arg(l, int));
 }
 
 /**
