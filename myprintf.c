@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
         {'s', ps},
         {'%', ppercent},
         {'\0', NULL}
-    }
+    };
     
     va_list list;
     
