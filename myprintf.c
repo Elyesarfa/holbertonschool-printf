@@ -29,8 +29,16 @@ int _printf(const char *format, ...)
     {
         if (format[j] != '%')
         {
-            putchar(format[j]);
-            j++;
+            if (format[j] == '\\' && format[j + 1] == 'n')
+            {
+                putchar('\n');
+                j = j + 2
+            }
+            else
+            {
+                putchar(format[j]);
+                j++;
+            }
         }
     }
     *fptr = *fptr;
