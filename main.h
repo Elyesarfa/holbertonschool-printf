@@ -3,7 +3,8 @@
 
 #include <stdarg.h>
 
-typedef struct structname{
+
+typedef struct ntype_t {
   char character;
   void (*f)(va_list);
 } ntype_t;

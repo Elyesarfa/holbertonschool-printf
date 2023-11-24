@@ -46,6 +46,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			int found = 0;
 			for (i = 0 ; i < 3 ; i++)
 			{
 				if(format[j + 1] == fptr[i].character)
@@ -54,8 +55,10 @@ int _printf(const char *format, ...)
 					choose(list);
 					j = j + 2;
 					bytecount++;
+					found = 1;
+					break;
 				}
-				else
+				if (!found)
 				{
 					putchar(format[j]);
 					putchar(format[j + 1]);
