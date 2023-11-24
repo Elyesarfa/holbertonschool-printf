@@ -35,7 +35,6 @@ int _printf(const char *format, ...)
 			if (format[j] == '\\' && format[j + 1] == 'n')
 			{
 				putchar('\n');
-				bytecount = bytecount + 2;
 				j = j + 2;
 			}
 			else
@@ -54,7 +53,7 @@ int _printf(const char *format, ...)
 					choose = fptr[i].f;
 					choose(list);
 					j = j + 2;
-					bytecount = bytecount + 2;
+					bytecount++;
 				}
 				else
 				{
