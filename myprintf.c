@@ -65,7 +65,7 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
-	printf("%d", bytecount);
+
 	va_end(list);
 	return (bytecount);
 }
