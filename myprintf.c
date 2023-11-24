@@ -15,6 +15,8 @@ int _printf(const char *format, ...)
 		{'c', pc},
 		{'s', ps},
 		{'%', ppercent},
+		{'d', p_int},
+		{'i', p_dec},
 		{'\0', NULL}
 	};
 	int bytecount = 0;

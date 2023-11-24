@@ -14,5 +14,7 @@ void errormsg();
 void pc(va_list l);
 void ppercent(va_list l);
 void ps(va_list l);
+void p_int(va_list l);
+void p_dec(va_list l);
 
 #endif
