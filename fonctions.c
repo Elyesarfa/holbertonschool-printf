@@ -8,7 +8,7 @@
 
 void pc(va_list l)
 {
-    putchar(va_arg(l, int));
+	putchar(va_arg(l, int));
 }
 
 /**
@@ -17,8 +17,8 @@ void pc(va_list l)
 
 void ppercent(va_list l)
 {
-    putchar('%');
-    l = l;
+	putchar('%');
+	l = l;
 }
 
 /**
@@ -27,14 +27,14 @@ void ppercent(va_list l)
 
 void ps(va_list l)
 {
-    char *str = va_arg(l, char *);
-    int i = 0;
+	char *str = va_arg(l, char *);
+	int i = 0;
 
-    while(str[i] == '\0')
-    {
-        putchar(str[i]);
-        i++;
-    }
+	while(str[i] == '\0')
+	{
+		putchar(str[i]);
+		i++;
+	}
 }
 
 /**
@@ -43,9 +43,9 @@ void ps(va_list l)
 
 void errormsg()
 {
-    putchar('e');
-    putchar('r');
-    putchar('r');
-    putchar('o');
-    putchar('r');
+	putchar('e');
+	putchar('r');
+	putchar('r');
+	putchar('o');
+	putchar('r');
 }
