@@ -21,6 +21,7 @@ int pc(va_list l)
 
 /**
  * ppercent - print %
+ * @l: valist
  * Return: 1
 */
 
@@ -75,28 +76,27 @@ int temp;
 int num = n;
 int mag = 1;
 int i = 0;
-if (n < 0) 
+if (n < 0)
 {
 _putchar('-');
 num = -num;
 i++;
 }
-if (num == 0) 
+if (num == )
 {
 _putchar('0');
 return (1);
 }
 temp = num;
-while (temp / 10 != 0) 
+while (temp / 10 != 0)
 {
 mag *= 10;
 temp /= 10;
 }
-do 
-{
+do {
 digit = num / mag;
 _putchar(digit + '0');
-num -= digit * mag;
+num -= digit *mag;
 mag /= 10;
 i++;
 }
@@ -135,8 +135,7 @@ while (temp / 10 != 0)
 mag *= 10;
 temp /= 10;
 }
-do 
-{
+do {
 digit = num / mag;
 _putchar(digit + '0');
 num -= digit * mag;
