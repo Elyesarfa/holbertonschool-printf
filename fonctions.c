@@ -82,19 +82,6 @@ int ps(va_list l)
 }
 
 /**
- * 
-*/
-
-void errormsg()
-{
-	putchar('e');
-	putchar('r');
-	putchar('r');
-	putchar('o');
-	putchar('r');
-}
-
-/**
  *
 */
 
@@ -183,23 +170,6 @@ size_t _strlen(const char *s)
     size_t len = 0;
 
     while (s[len] != '\0')
-    {
-        len++;
-    }
-
-    return len;
-}
-
-
-/**
-*
-*/
-
-size_t _strlenc(const char *s, char c)
-{
-    size_t len = 0;
-
-    while (s[len] != '\0' && s[len] != c)
     {
         len++;
     }
