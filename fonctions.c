@@ -4,19 +4,23 @@
 
 
 /**
- * 
+ * pc - print character
+ * @l: valist
+ * Return: 1
 */
 
 int pc(va_list l)
 {
 	char str;
+
 	str = va_arg(l, int);
 	_putchar(str);
 	return (1);
 }
 
 /**
- * 
+ * ppercent - print %
+ * Return: 1
 */
 
 int ppercent(void)
@@ -26,7 +30,9 @@ int ppercent(void)
 }
 
 /**
- * 
+ * ps - print a string
+ * @l: valist
+ * Return: length
 */
 
 int ps(va_list l)
@@ -34,6 +40,7 @@ int ps(va_list l)
 	char *str;
 	int i;
 	int length;
+
 	str = va_arg(l, char *);
 	if (str == NULL)
 	{
@@ -48,12 +55,14 @@ int ps(va_list l)
 		length = _strlen(str);
 		for (i = 0; i < length; i++)
 		_putchar(str[i]);
-	return (length);	
+	return (length);
 	}
 }
 
 /**
- *
+ * p_dec - print decimal
+ * @l: valist
+ * Return: 1
 */
 
 int p_dec(va_list l)
@@ -93,7 +102,9 @@ return (1);
 }
 
 /**
- *
+ * p_int - print integer
+ * @l: valist
+ * Return: number of digits
 */
 
 int p_int(va_list l)
