@@ -9,6 +9,7 @@ typedef struct ntype_t {
   void (*f)(va_list);
 } ntype_t;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
 void errormsg();
 void pc(va_list l);
