@@ -82,7 +82,7 @@ _putchar('-');
 num = -num;
 i++;
 }
-if (num == )
+if (num == 0)
 {
 _putchar('0');
 return (1);
