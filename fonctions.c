@@ -76,6 +76,7 @@ int temp;
 unsigned int num = (n < 0) ? -n : n;
 int mag = 1;
 int i = 0;
+num = n;
 if (n < 0)
 {
 _putchar('-');
@@ -117,6 +118,7 @@ int temp;
 unsigned int num = (n < 0) ? -n : n;
 int mag = 1;
 int i = 0;
+num = n;
 if (n < 0)
 {
 _putchar('-');
