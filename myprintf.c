@@ -24,7 +24,11 @@ while (*format != '\0')
 		format++;
         len += format_specifier(*format, l);
 	}
-    else
+    else if (*format == '%' && *(format + 1) == '\0')
+	{
+		return (0);
+	}
+	else
     {
 	_putchar(*format);
 	len++;
