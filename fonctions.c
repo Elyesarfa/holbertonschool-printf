@@ -99,8 +99,7 @@ _putchar(digit + '0');
 num -= digit *mag;
 mag /= 10;
 i++;
-}
-while (mag > 0);
+} while (mag > 0);
 return (i);
 }
 
@@ -118,19 +117,19 @@ int temp;
 int num = n;
 int mag = 1;
 int i = 0;
-if (n < 0) 
+if (n < 0)
 {
 _putchar('-');
 num = -num;
 i++;
 }
-if (num == 0) 
+if (num == 0)
 {
 _putchar('0');
 return (1);
 }
 temp = num;
-while (temp / 10 != 0) 
+while (temp / 10 != 0)
 {
 mag *= 10;
 temp /= 10;
@@ -138,10 +137,9 @@ temp /= 10;
 do {
 digit = num / mag;
 _putchar(digit + '0');
-num -= digit * mag;
+num -= digit *mag;
 mag /= 10;
 i++;
-}
-while (mag > 0);
+} while (mag > 0);
 return (i);
 }
