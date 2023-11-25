@@ -4,15 +4,20 @@
 #include <stdarg.h>
 #include <stddef.h>
 
+/**
+ * struct ntype_t - structure of members string and function pointer
+ * @id: string
+ * @f: function pointer
+*/
 
-typedef struct ntype_t {
-  const char *id;
-  int (*f)();
+typedef struct ntype_t
+{
+	const char *id;
+	int (*f)();
 } ntype_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void errormsg();
 int pc(va_list l);
 int ppercent(void);
 int ps(va_list l);
