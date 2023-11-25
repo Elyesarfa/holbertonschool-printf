@@ -12,6 +12,11 @@ int _printf(const char *format, ...)
 	int len = 0;
 	va_list l;
 	va_start(l, format);
+
+if (format == NULL)
+{
+	return (-1);
+}
 while (*format != '\0')
 {
     if (*format == '%' && *(format + 1) != '\0')
