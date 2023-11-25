@@ -26,7 +26,7 @@ while (*format != '\0')
 	}
     else if (*format == '%' && *(format + 1) == '\0')
 	{
-		return (0);
+		return (-1);
 	}
 	else
     {
