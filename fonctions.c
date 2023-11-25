@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdarg.h>
 #include "main.h"
 
 
@@ -23,10 +24,11 @@ int pc(va_list l)
  * Return: 1
 */
 
-int ppercent(void)
+int ppercent(va_list l)
 {
 	_putchar(37);
 	return (1);
+	l = l;
 }
 
 /**
@@ -68,31 +70,37 @@ int ps(va_list l)
 int p_dec(va_list l)
 {
 int n = va_arg(l, int);
-int digit;
-int num = n;
-int mag = 1;
-int i = 0;
-if (n < 0)
-{
-	_putchar('-');
-	num = -num;
-	i++;
-}
-	while (num / 10 != 0)
+    int digit;
+	int temp;
+    int num = n;
+    int mag = 1;
+    int i = 0;
+    if (n < 0) 
 	{
-		mag *= 10;
-		num /= 10;
-	}
-	num = n;
-	while (mag > 0)
+        _putchar('-');
+        num = -num;
+        i++;
+    }
+    if (num == 0) 
 	{
-		digit = num / mag;
-		_putchar(digit + '0');
-		num -= digit * mag;
-		mag /= 10;
-		i++;
-	}
-return (i);
+        _putchar('0');
+        return (1);
+    }
+    temp = num;
+    while (temp / 10 != 0) 
+	{
+        mag *= 10;
+        temp /= 10;
+    }
+    do 
+	{
+        digit = num / mag;
+        _putchar(digit + '0');
+        num -= digit * mag;
+        mag /= 10;
+        i++;
+    } while (mag > 0);
+    return (i);
 }
 
 /**
@@ -103,31 +111,36 @@ return (i);
 
 int p_int(va_list l)
 {
-int n = va_arg(l, int);
-int digit;
-int num = n;
-int mag = 1;
-int i = 0;
-if (n < 0)
-{
-	_putchar('-');
-	num = -num;
-	i++;
-}
-	while (num / 10 != 0)
+ int n = va_arg(l, int);
+    int digit;
+	int temp;
+    int num = n;
+    int mag = 1;
+    int i = 0;
+    if (n < 0) 
 	{
-		mag *= 10;
-		num /= 10;
-	}
-	num = n;
-	while (mag > 0)
+        _putchar('-');
+        num = -num;
+        i++;
+    }
+    if (num == 0) 
 	{
-		digit = num / mag;
-		_putchar(digit + '0');
-		num -= digit * mag;
-		mag /= 10;
-		i++;
-	}
-return (i);
+        _putchar('0');
+        return (1);
+    }
+    temp = num;
+    while (temp / 10 != 0) 
+	{
+        mag *= 10;
+        temp /= 10;
+    }
+    do 
+	{
+        digit = num / mag;
+        _putchar(digit + '0');
+        num -= digit * mag;
+        mag /= 10;
+        i++;
+    } while (mag > 0);
+    return (i);
 }
-

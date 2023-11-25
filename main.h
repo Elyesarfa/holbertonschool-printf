@@ -13,13 +13,13 @@
 typedef struct ntype_t
 {
 	const char *id;
-	int (*f)();
+	int (*f)(va_list);
 } ntype_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 int pc(va_list l);
-int ppercent(void);
+int ppercent(va_list l);
 int ps(va_list l);
 int p_int(va_list l);
 int p_dec(va_list l);
