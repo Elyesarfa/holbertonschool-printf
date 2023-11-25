@@ -68,37 +68,31 @@ int ps(va_list l)
 int p_dec(va_list l)
 {
 int n = va_arg(l, int);
-int num, last = n % 10, digit, exp = 1;
-int i = 1;
-n = n / 10;
-num = n;
-if (last < 0)
+int digit;
+int num = n;
+int mag = 1;
+int i = 0;
+if (n < 0)
 {
 	_putchar('-');
 	num = -num;
-	n = -n;
-	last = -last;
 	i++;
 }
-if (num > 0)
-{
 	while (num / 10 != 0)
 	{
-		exp = exp * 10;
-		num = num / 10;
+		mag *= 10;
+		num /= 10;
 	}
 	num = n;
-	while (exp > 0)
+	while (mag > 0)
 	{
-		digit = num / exp;
+		digit = num / mag;
 		_putchar(digit + '0');
-		num = num - (digit * exp);
-		exp = exp / 10;
+		num -= digit * mag;
+		mag /= 10;
 		i++;
 	}
-}
-_putchar(last + '0');
-return (1);
+return (i);
 }
 
 /**
@@ -110,36 +104,30 @@ return (1);
 int p_int(va_list l)
 {
 int n = va_arg(l, int);
-int num, last = n % 10, digit, exp = 1;
-int i = 1;
-n = n / 10;
-num = n;
-if (last < 0)
+int digit;
+int num = n;
+int mag = 1;
+int i = 0;
+if (n < 0)
 {
 	_putchar('-');
 	num = -num;
-	n = -n;
-	last = -last;
 	i++;
 }
-if (num > 0)
-{
 	while (num / 10 != 0)
 	{
-		exp = exp * 10;
-		num = num / 10;
+		mag *= 10;
+		num /= 10;
 	}
 	num = n;
-	while (exp > 0)
+	while (mag > 0)
 	{
-		digit = num / exp;
+		digit = num / mag;
 		_putchar(digit + '0');
-		num = num - (digit * exp);
-		exp = exp / 10;
+		num -= digit * mag;
+		mag /= 10;
 		i++;
 	}
-}
-_putchar(last + '0');
 return (i);
 }
 
