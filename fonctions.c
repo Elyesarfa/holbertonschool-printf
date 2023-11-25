@@ -80,7 +80,7 @@ if (last < 0)
 	last = -last;
 	i++;
 }
-if (num < 0)
+if (num > 0)
 {
 	while (num / 10 != 0)
 	{
@@ -122,7 +122,7 @@ if (last < 0)
 	last = -last;
 	i++;
 }
-if (num < 0)
+if (num > 0)
 {
 	while (num / 10 != 0)
 	{
