@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[j] != '%')
 		{
-			putchar(format[j]);
+			_putchar(format[j]);
 			j++;
 			bytecount++;
 		}
@@ -54,8 +54,8 @@ int _printf(const char *format, ...)
 				}
 				if (!found)
 				{
-					putchar(format[j]);
-					putchar(format[j + 1]);
+					_putchar(format[j]);
+					_putchar(format[j + 1]);
 					j = j + 2;
 					bytecount = bytecount + 2;
 				}
