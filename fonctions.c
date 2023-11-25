@@ -73,7 +73,7 @@ int p_dec(va_list l)
 int n = va_arg(l, int);
 int digit;
 int temp;
-int num = n;
+unsigned int num = (n < 0) ? -n : n;
 int mag = 1;
 int i = 0;
 if (n < 0)
@@ -114,7 +114,7 @@ int p_int(va_list l)
 int n = va_arg(l, int);
 int digit;
 int temp;
-int num = n;
+unsigned int num = (n < 0) ? -n : n;
 int mag = 1;
 int i = 0;
 if (n < 0)
