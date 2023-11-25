@@ -9,60 +9,23 @@
 
 int _printf(const char *format, ...)
 {
-	int j = 0;
-	int i;
-	ntype_t fptr[] = {
-		{'c', pc},
-		{'s', ps},
-		{'%', ppercent},
-		{'d', p_int},
-		{'i', p_dec},
-		{'\0', NULL}
-	};
-	int bytecount = 0;
-	int len;
-	va_list list;
-	void (*choose)(va_list);
-	
-	if (format == NULL)
+	int len = 0;
+	va_list l;
+	va_start(l, format);
+while (*format != '\0')
+{
+    if (*format == '%' && *(format + 1) != '\0')
 	{
-		return (-1);
+		format++;
+        len += format_specifier(*format, l);
 	}
-	len = strlen(format);
-	va_start(list, format);
-	while (j < len)
-	{
-		if (format[j] != '%')
-		{
-			_putchar(format[j]);
-			j++;
-			bytecount++;
-		}
-		else
-		{
-			int found = 0;
-			for (i = 0 ; i < 3 ; i++)
-			{
-				if(format[j + 1] == fptr[i].character)
-				{
-					choose = fptr[i].f;
-					choose(list);
-					j = j + 2;
-					bytecount++;
-					found = 1;
-					break;
-				}
-				if (!found)
-				{
-					_putchar(format[j]);
-					_putchar(format[j + 1]);
-					j = j + 2;
-					bytecount = bytecount + 2;
-				}
-			}
-		}
-	}
-
-	va_end(list);
-	return (bytecount);
+    else
+    {
+	_putchar(*format);
+	len++;
+    }
+    format++;
+}
+va_end(l);
+return (len);
 }
