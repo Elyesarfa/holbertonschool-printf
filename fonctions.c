@@ -10,7 +10,7 @@ void pc(va_list l)
 {
 	char str;
 	str = va_arg(l, int);
-	putchar(str);
+	_putchar(str);
 }
 
 /**
@@ -19,7 +19,7 @@ void pc(va_list l)
 
 void ppercent(va_list l)
 {
-	putchar(64);
+	_putchar(64);
 	l = l;
 }
 
@@ -33,7 +33,7 @@ void ps(va_list l)
 	char *str = va_arg(l, char *);
 	while(str[i] != '\0')
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
 }
@@ -64,7 +64,7 @@ n = n / 10;
 num = n;
 if (last < 0)
 {
-	putchar('-');
+	_putchar('-');
 	num = -num;
 	n = -n;
 	last = -last;
@@ -81,13 +81,13 @@ if (num < 0)
 	while (exp > 0)
 	{
 		digit = num / exp;
-		putchar(digit + '0');
+		_putchar(digit + '0');
 		num = num - (digit * exp);
 		exp = exp / 10;
 		i++;
 	}
 }
-putchar(last + '0');
+_putchar(last + '0');
 }
 
 /**
@@ -103,7 +103,7 @@ n = n / 10;
 num = n;
 if (last < 0)
 {
-	putchar('-');
+	_putchar('-');
 	num = -num;
 	n = -n;
 	last = -last;
@@ -120,11 +120,11 @@ if (num < 0)
 	while (exp > 0)
 	{
 		digit = num / exp;
-		putchar(digit + '0');
+		_putchar(digit + '0');
 		num = num - (digit * exp);
 		exp = exp / 10;
 		i++;
 	}
 }
-putchar(last + '0');
+_putchar(last + '0');
 }
