@@ -2,7 +2,10 @@
 #include <stddef.h>
 
 /**
- * 
+ * format_specifier - specifies format
+ * @specifier: character to specify
+ * @l: valist
+ * Return: length or 2
 */
 
 int format_specifier(char specifier, va_list l)
@@ -17,7 +20,8 @@ ntype_t fptr[] = {
 	};
 	int a = 0;
 	int len = 0;
-	while (fptr[a].id [0] != '\0')
+
+	while (fptr[a].id[0] != '\0')
 	{
 		if (fptr[a].id[0] == specifier)
 		{
