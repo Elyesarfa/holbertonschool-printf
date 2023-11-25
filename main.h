@@ -23,7 +23,6 @@ int ppercent(void);
 int ps(va_list l);
 int p_int(va_list l);
 int p_dec(va_list l);
-size_t _strlenc(const char *s, char c);
 size_t _strlen(const char *s);
 int format_specifier(char specifier, va_list l);
 
