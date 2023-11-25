@@ -5,17 +5,20 @@
 
 
 typedef struct ntype_t {
-  char character;
-  void (*f)(va_list);
+  const char *id;
+  int (*f)();
 } ntype_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 void errormsg();
-void pc(va_list l);
-void ppercent(va_list l);
-void ps(va_list l);
-void p_int(va_list l);
-void p_dec(va_list l);
+int pc(va_list l);
+int ppercent(void);
+int ps(va_list l);
+int p_int(va_list l);
+int p_dec(va_list l);
+size_t _strlenc(const char *s, char c);
+size_t _strlen(const char *s);
+int format_specifier(char specifier, va_list l);
 
 #endif

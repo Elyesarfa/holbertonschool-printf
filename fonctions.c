@@ -6,35 +6,78 @@
  * 
 */
 
-void pc(va_list l)
+int format_specifier(char specifier, va_list l)
+{
+ntype_t fptr[] = {
+		{"c", pc},
+		{"s", ps},
+		{"%", ppercent},
+		{"d", p_int},
+		{"i", p_dec},
+		{"\0", NULL}
+	};
+	int a = 0;
+	int len = 0;
+	while (fptr[a].id [0] != '\0')
+	{
+		if (fptr[a].id[0] == specifier)
+		{
+			len += fptr[a].f(l);
+			return (len);
+		}
+		a++;
+	}
+	_putchar('%');
+	_putchar(specifier);
+	return (2);
+}
+
+/**
+ * 
+*/
+
+int pc(va_list l)
 {
 	char str;
 	str = va_arg(l, int);
 	_putchar(str);
+	return (1);
 }
 
 /**
  * 
 */
 
-void ppercent(va_list l)
+int ppercent(void)
 {
-	_putchar(64);
-	l = l;
+	_putchar(37);
+	return (1);
 }
 
 /**
  * 
 */
 
-void ps(va_list l)
+int ps(va_list l)
 {
-	int i = 0;
-	char *str = va_arg(l, char *);
-	while(str[i] != '\0')
+	char *str;
+	int i;
+	int length;
+	str = va_arg(l, char *);
+	if (str == NULL)
 	{
+		str = "(null)";
+		length = _strlen(str);
+		for (i = 0; i < length; i++)
 		_putchar(str[i]);
-		i++;
+	return (length);
+	}
+	else
+	{
+		length = _strlen(str);
+		for (i = 0; i < length; i++)
+		_putchar(str[i]);
+	return (length);	
 	}
 }
 
@@ -55,7 +98,7 @@ void errormsg()
  *
 */
 
-void p_dec(va_list l)
+int p_dec(va_list l)
 {
 int n = va_arg(l, int);
 int num, last = n % 10, digit, exp = 1;
@@ -88,13 +131,14 @@ if (num < 0)
 	}
 }
 _putchar(last + '0');
+return (1);
 }
 
 /**
  *
 */
 
-void p_int(va_list l)
+int p_int(va_list l)
 {
 int n = va_arg(l, int);
 int num, last = n % 10, digit, exp = 1;
@@ -127,4 +171,38 @@ if (num < 0)
 	}
 }
 _putchar(last + '0');
+return (i);
+}
+
+/**
+ *
+*/
+
+size_t _strlen(const char *s)
+{
+    size_t len = 0;
+
+    while (s[len] != '\0')
+    {
+        len++;
+    }
+
+    return len;
+}
+
+
+/**
+*
+*/
+
+size_t _strlenc(const char *s, char c)
+{
+    size_t len = 0;
+
+    while (s[len] != '\0' && s[len] != c)
+    {
+        len++;
+    }
+
+    return len;
 }
