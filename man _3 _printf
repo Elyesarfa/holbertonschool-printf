@@ -23,11 +23,11 @@
 
 # EXAMPLES
 	Example 1: Print an integer:
-	int num = 42;
+	int num = 69;
 	_printf("The magic number is: %d\n", num);
 
 	Example 2: Print a string:
-	char str[] = "Hello, world!";
+	char str[] = "a7la,nes!";
 	_printf("Greeting: %s\n", str);
 
 	Example 3: Print a character:
