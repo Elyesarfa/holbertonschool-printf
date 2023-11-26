@@ -1,0 +1,43 @@
+# NAME
+	_printf
+
+# SYNOPSIS
+	#include "main.h"
+
+	int _printf(const char *format, ...);
+
+# DESCRIPTION
+	The `_printf` function outputs text to the standard output according to the specified format string.
+
+	The format string can contain format specifiers, which begin with the '%' character, followed by a conversion specifier.
+
+	The supported conversion specifiers for `_printf` are:
+
+	- `%d, %i`: Print a signed integer.
+	- `%s`: Print a string.
+	- `%c`: Print a character.
+	- `%%`: Print a percent character '%'.
+
+# RETURN VALUE
+	The `_printf` function returns the number of characters printed on success or a negative value on error.
+
+# EXAMPLES
+	Example 1: Print an integer:
+	int num = 42;
+	_printf("The magic number is: %d\n", num);
+
+	Example 2: Print a string:
+	char str[] = "Hello, world!";
+	_printf("Greeting: %s\n", str);
+
+	Example 3: Print a character:
+	char ch = 'A';
+	_printf("First letter: %c\n", ch);
+	
+	Example 4: Print a percent character:
+	_printf("This is a percent sign: %%\n");
+	
+
+# AUTHORS
+	mohamed elyes sassi 
+    mohamed elyes arfa
