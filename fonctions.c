@@ -34,7 +34,7 @@ int ppercent(va_list l)
 
 /**
  * ps - print a string
- * @l: valist
+ * @l: va_list
  * Return: length
 */
 
